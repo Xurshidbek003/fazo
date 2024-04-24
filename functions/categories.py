@@ -16,7 +16,7 @@ def create_category(forms, db, user):
                 name=form.name)
             save_in_db(db, new_item_db)
     else:
-        raise HTTPException(400, " Error !!! ")
+        raise HTTPException(400, " Xatolik !!! ")
 
 
 def update_category(forms, db, user):

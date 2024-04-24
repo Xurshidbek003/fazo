@@ -10,7 +10,7 @@ def create_likes(form, db, user):
     if (form.source == "laptop" and db.query(Laptops).filter(form.source_id == Laptops.id).first() is None) or\
             (form.source == "phone" and db.query(Phones).filter(form.source_id == Phones.id).first() is None) or\
             (form.source == "tablet" and db.query(Tablets).filter(form.source_id == Tablets.id).first() is None):
-        raise HTTPException(400, "Bunday mahsulot mavjud emas !!! ")
+        raise HTTPException(400, "Bunday mahsulot bizda mavjud emas !!! ")
 
     likes = db.query(Likes).filter(
         Likes.user_id == user.id,
@@ -57,7 +57,3 @@ def delete_likes(delete_all, ident, user, db):
         db.commit()
     else:
         raise HTTPException(400, " Bunday mahsulot saralanganlarda mavjud emas !!!")
-
-
-
-
