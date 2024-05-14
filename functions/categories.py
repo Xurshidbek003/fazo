@@ -39,6 +39,3 @@ def delete_category(db, idents, user):
         db.commit()
     else:
         raise HTTPException(400, " Error !!!")
-
-
-
